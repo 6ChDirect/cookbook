@@ -3,15 +3,94 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Homepage</title>
+<title>Create Recipe</title>
+<script type= "text/javascript" src= "js/jquery.js"></script>
+<link rel= "stylesheet" href= "/static/css/bootstrap.css" />
 </head>
 <body>
-	<form method="POST" action="/recipes">
-	Titulo: <input type="text" name="titulo"/><br/>
-	Problema: <input type="text" name="problema"/><br/>
-	Solução: <input type="text" name="solucao"/><br/>
-	Autor: <input type="text" name="autor"/><br/>
-	<input type="submit" value="Criar Nova Receita"/>
-	</form>
+	<div class= "container-fluid">
+		<div class= "row-fluid">
+			<div class= "span12" align= "center">
+				<div class= "hero-unit">
+					<h1>Cookbook Manager</h1>
+				</div>
+			</div>
+		</div>
+		
+		<div class= "row-fluid">
+			<div class= "span12">
+				<div class= "navbar">
+					<div class= "navbar-inner">
+						<ul class= "nav">
+							<li><a href= "/">Início</a></li>
+						</ul>
+						<form class= "navbar-search pull-right" method="POST" action="/recipes/search">
+							<input type= "text" class= "search-query" placeholder= "Inserir palavra a pesquisar" name= "param"/>
+							<button type= "submit" class= "btn">Procurar</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class= "row-fluid">
+			<div class= "span12">
+				<div class= "row-fluid">
+					<div class= "span3">
+						<ul class= "nav nav-list">
+							<li><a href="/recipes/create">Criar Receita</a></li>
+							<li><a href="/recipes">Listar Receitas</a></li>
+						</ul>
+					</div>
+					<div class= "span6" align= "center">
+						<div class= "hero-unit">
+							<h3>Criar Receita</h3>
+						</div>
+						<form class= "form-horizontal" method="POST" action="/recipes">
+							<div class= "control-group">
+								<label class= "control-label" for= "inputTitulo">Titulo</label>
+								<div class= "controls">
+									<input type="text" placeholder= "titulo..." name="titulo"/>
+								</div>
+							</div>
+							<div class= "control-group">
+								<label class= "control-label" for= "inputProblema">Problema</label>
+								<div class= "controls">
+									<input type="text" placeholder= "problema..." name="problema"/>
+								</div>
+							</div>
+							<div class= "control-group">
+								<label class= "control-label" for= "inputSolucao">Solução</label>
+								<div class= "controls">
+									<input type="text" placeholder= "solução..." name="solucao"/>
+								</div>
+							</div>
+							<div class= "control-group">
+								<label class= "control-label" for= "inputAutor">Autor</label>
+								<div class= "controls">
+									<input type="text" placeholder= "autor..." name="autor"/>
+								</div>
+							</div>
+							<div class= "control-group">
+								<label class= "control-label" for= "inputClassificacao">Classificação</label>
+								<div class= "controls">
+									<input type="text" placeholder= "classificação..." name="classificacao"/>
+								</div>
+							</div>
+							<div class= "form-actions">
+								<button type= "submit" class= "btn btn-success">Guardar</button>
+								<button type= "reset" class= "btn btn-danger">Cancelar</button>
+							</div>
+						</form>
+						<p><br/></p>
+						<p><br/></p>
+						<p><br/></p>
+					</div>
+					<div class= "span3">
+					</div>
+				</div>			
+			</div>
+		</div>
+	</div>
 </body>
 </html>

@@ -1,27 +1,16 @@
 package pt.ulht.es.cookbook.domain;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import pt.ist.fenixframework.FenixFramework;
 
-public class CookbookManager {
+public class CookbookManager extends CookbookManager_Base {
 
-	private static int nextRecipeId = 1;
-	private static Map<String,Recipe> RECIPE_MAP = new HashMap<String,Recipe>();
-	
-	public static void saveRecipe(Recipe recipe) {
-		String id = nextRecipeId+"";
-		RECIPE_MAP.put(id, recipe);
-		recipe.setId(id);
-		nextRecipeId++;
+	public static CookbookManager getInstance() {
+		return FenixFramework.getRoot();
 	}
-
-	public static Recipe getRecipe(String id) {
-		return RECIPE_MAP.get(id);
+    
+	public void delete() {
+		for (Recipe recipe : getRecipeSet()) {
+			recipe.delete();
+		}
 	}
-
-	public static Collection<Recipe> getRecipes() {
-		return RECIPE_MAP.values();
-	}
-
 }
