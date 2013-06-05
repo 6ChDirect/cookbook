@@ -47,22 +47,22 @@
 						<div class= "hero-unit">
 							<h3>Receita Detalhada</h3>
 						</div>
-						<h1>${recipe.titulo}</h1>
+						<h1>${recipe.lastVersion.titulo}</h1>
 						<p><br/></p>
 						<b>Autor:</b>
-						<p>${recipe.autor}</p>
+						<p>${recipe.lastVersion.autor}</p>
 						<b>Data de Criação:</b>
-						<p>${recipe.data}</p>
+						<p>${recipe.lastVersion.data}</p>
 						<b>Problema:</b>
-						<p>${recipe.problema}</p>
+						<p>${recipe.lastVersion.problema}</p>
 						<b>Solução:</b>
-						<p>${recipe.solucao}</p>
+						<p>${recipe.lastVersion.solucao}</p>
 						<b>Classificação:</b>
 						<c:forEach var="tag" items='${tmp}'>
 								<span class = "label">${tag}</span>
 						</c:forEach>
 						<p><br/></p>
-						<a class="btn btn-warning">Editar</a>
+						<a class="btn btn-warning" href="/recipes/${recipe.externalId}/edit">Editar</a>
 						<a class="btn btn-danger" href="/recipes/${recipe.externalId}/delete">Apagar</a>
 						<p><br/></p>
 						<p><br/></p>

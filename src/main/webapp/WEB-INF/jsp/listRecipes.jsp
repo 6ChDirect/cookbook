@@ -49,7 +49,7 @@
 						</div>
 						<ul class= "nav nav-list">
 							<c:forEach var="recipe" items='${recipes}'>
-								<li><a href="/recipes/${recipe.externalId}">${recipe.titulo}</a></li>
+								<li><a href="/recipes/${recipe.externalId}">${recipe.lastVersion.titulo}</a></li>
 							</c:forEach>
 						</ul>
 					</div>
